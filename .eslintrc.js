@@ -20,5 +20,7 @@ module.exports = {
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
   },
 };
