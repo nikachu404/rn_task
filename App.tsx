@@ -6,6 +6,7 @@ import {Provider, cacheExchange, fetchExchange, createClient} from 'urql';
 import {Auth0Provider} from 'react-native-auth0';
 import {PaperProvider} from 'react-native-paper';
 import {HomeScreen, MapScreen, UrqlScreen, LoginScreen} from './src/screens/';
+import {REACT_APP_AUTH_DOMAIN, REACT_APP_AUT_CLIENT_ID} from '@env';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,15 +15,13 @@ export const client = createClient({
   exchanges: [cacheExchange, fetchExchange],
 });
 
-const authDomain = process.env.REACT_APP_AUTH_DOMAIN as string;
-const authClientId = process.env.REACT_APP_AUT_CLIENT_ID as string;
+const authDomain = REACT_APP_AUTH_DOMAIN;
+const authClientId = REACT_APP_AUT_CLIENT_ID;
 
 function App(): JSX.Element {
   return (
     <>
-      <Auth0Provider
-        domain={authDomain}
-        clientId={authClientId}>
+      <Auth0Provider domain={authDomain} clientId={authClientId}>
         <Provider value={client}>
           <PaperProvider>
             <NavigationContainer>

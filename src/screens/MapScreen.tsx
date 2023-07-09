@@ -2,8 +2,9 @@ import {View, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import MapboxGL from '@rnmapbox/maps';
 import {Button, Header} from '../components';
+import {REACT_APP_MAPBOX_TOKEN} from '@env';
 
-const mapboxToken = process.env.REACT_APP_MAPBOX_TOKEN as string;
+const mapboxToken = REACT_APP_MAPBOX_TOKEN;
 
 MapboxGL.setWellKnownTileServer('Mapbox');
 MapboxGL.setAccessToken(mapboxToken);
