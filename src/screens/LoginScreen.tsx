@@ -2,7 +2,7 @@ import {View, Text, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {useAuth0} from 'react-native-auth0';
 import {LogoSvg} from '../assets/icons/LogoSvg';
-import {Button, Header} from '../components';
+import {Button} from '../components';
 
 export const LoginScreen: React.FC = () => {
   const {authorize, isLoading, error} = useAuth0();
@@ -19,7 +19,6 @@ export const LoginScreen: React.FC = () => {
 
   return (
     <>
-      <Header screenName="Home" />
       <View style={styles.container}>
         <LogoSvg />
         <Button text="Login" onPress={onLoginPress} style={{width: 'auto'}} />
